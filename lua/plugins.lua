@@ -3,6 +3,9 @@ packer.startup({
     function(use)
         use 'wbthomason/packer.nvim'
         use 'shaunsingh/nord.nvim'
+        use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
+
+        
     end,
     config = {
         display = {
