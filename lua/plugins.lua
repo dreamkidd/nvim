@@ -2,10 +2,50 @@ local packer = require("packer")
 packer.startup({
     function(use)
         use 'wbthomason/packer.nvim'
+        use 'EdenEast/nightfox.nvim'
         use 'shaunsingh/nord.nvim'
-        use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
 
-        
+        use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
+        use "numToStr/Comment.nvim" -- Easily comment stuff
+
+        use({ 'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons' })
+        use ({'akinsho/bufferline.nvim' , requires = 'kyazdani42/nvum-web-devicons','moll/vim-bbye'})
+        use { 'nvim-lualine/lualine.nvim'}
+        use { 'nvim-telescope/telescope.nvim', requires = { "nvim-lua/plenary.nvim" } }
+        use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+        -- Git plugin
+        use 'lewis6991/gitsigns.nvim'
+
+        -- Hop which like easymotion
+        use {
+            'phaazon/hop.nvim' ,  
+            branch = 'v1'
+        }
+
+        use 'glepnir/dashboard-nvim'
+
+        use 'folke/which-key.nvim'
+
+        -- LSP 
+        use 'neovim/nvim-lspconfig' -- enable LSP
+        use 'williamboman/nvim-lsp-installer' -- lsp-installer
+        use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
+        use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+
+
+        -- cmp plugins
+        use "hrsh7th/nvim-cmp" -- The completion plugin
+        use "hrsh7th/cmp-buffer" -- buffer completions
+        use "hrsh7th/cmp-path" -- path completions
+        use "hrsh7th/cmp-cmdline" -- cmdline completions
+        use "hrsh7th/cmp-nvim-lsp"
+        -- snippets
+        use 'hrsh7th/cmp-vsnip'    -- { name = 'vsnip' }
+        use 'hrsh7th/vim-vsnip'
+        use "saadparwaiz1/cmp_luasnip" -- snippet completions
+        use "L3MON4D3/LuaSnip" --snippet engine
+        use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+
     end,
     config = {
         display = {
@@ -22,12 +62,12 @@ packer.startup({
 
 -- 自动更新
 pcall(
-  vim.cmd,
-  [[
-    augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-    augroup end
-  ]]
+    vim.cmd,
+    [[
+augroup packer_user_config
+autocmd!
+autocmd BufWritePost plugins.lua source <afile> | PackerSync
+augroup end
+]]
 )
 

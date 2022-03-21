@@ -1,9 +1,21 @@
-require('basic')
+require("basic")
 
-require('keybindings')
+require("keybindings")
 
-require('plugins')
+require("plugins")
 
-require('colorscheme')
+require("colorscheme")
 
 require("plugin-config.nvim-tree")
+-- require("plugin-config.bufferline")
+require("plugin-config.lualine")
+require("plugin-config.nvim-treesitter")
+require("plugin-config.hop")
+require("plugin-config.telescope")
+require("plugin-config.whichkey")
+require("plugin-config.comment")
+require("plugin-config.autopairs")
+require("plugin-config.cmp")
+
+
+require("lsp.init")
