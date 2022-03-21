@@ -48,7 +48,7 @@ nvim_tree.setup({
   
   
   system_open = {
-    cmd = "wsl-open",
+    cmd = "open",
   },
 })
 

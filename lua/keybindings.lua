@@ -1,8 +1,4 @@
-
--- leader map
-
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+-- leader map vim.g.mapleader = " " vim.g.maplocalleader = " "
 
 local map = vim.api.nvim_set_keymap
 local opt = {noremap = true , silent = true}
@@ -19,6 +15,15 @@ map("n", "<M-j>", "<C-w>j", opt)
 map("n", "<M-k>", "<C-w>k", opt)
 map("n", "<M-l>", "<C-w>l", opt)
 
+
+-- 左右比例控制
+map("n", "<C-l>", ":vertical resize -20<CR>", opt)
+map("n", "<C-h>", ":vertical resize +20<CR>", opt)
+-- 上下比例
+map("n", "<C-j>", ":resize +10<CR>", opt)
+map("n", "<C-k>", ":resize -10<CR>", opt)
+-- 等比例
+map("n", "s=", "<C-w>=", opt)
 
 -- Visule 
 -- 连续 缩进
