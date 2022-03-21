@@ -1,3 +1,9 @@
+local fn = vim.fn
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+if fn.empty(fn.glob(install_path)) > 0 then
+  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+end
+
 local packer = require("packer")
 packer.startup({
     function(use)
@@ -18,7 +24,7 @@ packer.startup({
 
         -- Hop which like easymotion
         use {
-            'phaazon/hop.nvim' ,  
+            'phaazon/hop.nvim' ,
             branch = 'v1'
         }
 
@@ -26,7 +32,10 @@ packer.startup({
 
         use 'folke/which-key.nvim'
 
-        -- LSP 
+        -- indent-blankline
+        use "lukas-reineke/indent-blankline.nvim"
+
+        -- LSP
         use 'neovim/nvim-lspconfig' -- enable LSP
         use 'williamboman/nvim-lsp-installer' -- lsp-installer
         use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for

@@ -67,8 +67,8 @@ vim.o.termguicolors = true
 vim.opt.termguicolors = true
 
 vim.o.list = true
-vim.o.listchars = "space:·"
-
+vim.o.listchars:append("space:·")
+vim.opt.listchars:append("eol:↴")
 vim.o.wildmenu = true
 
 vim.o.shortmess = vim.o.shortmess .. 'c'
@@ -81,4 +81,5 @@ vim.o.showmode = false
 
 -- 配置剪切板
 vim.opt.clipboard = 'unnamedplus'
+
 

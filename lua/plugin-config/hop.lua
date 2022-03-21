@@ -4,7 +4,7 @@
 
 local status, hop = pcall(require, "hop")
 if not status then
-    vim.notify("lualine not found")
+    vim.notify("hop not found")
     return
 end
 

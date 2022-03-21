@@ -16,6 +16,6 @@ require("plugin-config.whichkey")
 require("plugin-config.comment")
 require("plugin-config.autopairs")
 require("plugin-config.cmp")
-
+require("plugin-config.indent-blankline")
 
 require("lsp.init")
