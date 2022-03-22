@@ -1,7 +1,7 @@
 local status , bufferline = pcall(require , "bufferline")
-if not status then 
+if not status then
     vim.notify("bufferline not found")
-    return 
+    return
 end
 -- https://github.com/akinsho/bufferline.nvim#configuration
 bufferline.setup({

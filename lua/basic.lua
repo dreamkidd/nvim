@@ -67,7 +67,7 @@ vim.o.termguicolors = true
 vim.opt.termguicolors = true
 
 vim.o.list = true
-vim.o.listchars:append("space:·")
+vim.opt.listchars:append("space:·")
 vim.opt.listchars:append("eol:↴")
 vim.o.wildmenu = true
 

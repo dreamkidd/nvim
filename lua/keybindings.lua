@@ -46,12 +46,15 @@ map("n", "L", "$", opt)
 
 
 -- hop key bind
-map('n', '<leader>f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", opt)
-map('n', '<leader>F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>",opt)
-map('o', '<leader>f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>", opt)
-map('o', '<leader>F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = true })<cr>", opt)
-map('', '<leader>t', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", opt)
-map('', '<leader>T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", opt)
+map('n', '<leader>f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false })<cr>", opt)
+map('n', '<leader>F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false })<cr>",opt)
+
+map('n','<leader>j',"<cmd>HopLineAC<cr>",opt)
+map('n','<leader>k',"<cmd>HopLineBC<cr>",opt)
+-- map('o', '<leader>f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false, inclusive_jump = true })<cr>", opt)
+-- map('o', '<leader>F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false, inclusive_jump = true })<cr>", opt)
+-- map('', '<leader>t', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false })<cr>", opt)
+-- map('', '<leader>T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false })<cr>", opt)
 
 -- telescope
 
@@ -67,7 +70,7 @@ local pluginKeys = opt
 -- nvim-tree
 -- alt + m 键打开关闭tree
 map("n", "<M-m>", ":NvimTreeToggle<CR>", opt)
--- 列表快捷键
+-- nvimTree 列表快捷键
 pluginKeys.nvimTreeList = {
     -- 打开文件或文件夹
 { key = {"<CR>", "o", "<2-LeftMouse>"}, action = "edit" },
@@ -87,5 +90,23 @@ pluginKeys.nvimTreeList = {
 { key = "p", action = "paste" },
 { key = "s", action = "system_open" },
 }
-return pluginKeys
 
+pluginKeys.mapLSP = function (mapbuf)
+    mapbuf('n', 'rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opt)
+    mapbuf('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opt)
+    -- go xx
+    mapbuf('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)
+    mapbuf('n', 'gh', '<cmd>lua vim.lsp.buf.hover()<CR>', opt)
+    mapbuf('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opt)
+    mapbuf('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opt)
+    mapbuf('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opt)
+    -- diagnostic
+    mapbuf('n', 'go', '<cmd>lua vim.diagnostic.open_float()<CR>', opt)
+    mapbuf('n', 'gp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opt)
+    mapbuf('n', 'gn', '<cmd>lua vim.diagnostic.goto_next()<CR>', opt)
+    -- mapbuf('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opt)
+    -- leader + =
+    mapbuf('n', '<leader>=', '<cmd>lua vim.lsp.buf.formatting()<CR>', opt)
+end
+
+return pluginKeys
