@@ -65,7 +65,7 @@ map('','<leader>fh',"<cmd>lua require('telescope.builtin').help_tags()<cr>",opt)
 
 
 -- 插件快捷键
-local pluginKeys = opt
+local pluginKeys = {}
 
 -- nvim-tree
 -- alt + m 键打开关闭tree
@@ -91,7 +91,7 @@ pluginKeys.nvimTreeList = {
 { key = "s", action = "system_open" },
 }
 
-pluginKeys.mapLSP = function (mapbuf)
+pluginKeys.maplsp = function (mapbuf)
     mapbuf('n', 'rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opt)
     mapbuf('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opt)
     -- go xx
