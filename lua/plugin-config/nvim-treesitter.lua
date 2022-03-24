@@ -28,6 +28,22 @@ treesitter.setup{
     -- 替代默认的 = 格式化
     indent = {
         enable = true
+    },
+
+    refactor = {
+
+        highlight_definitions = {
+            enable = true ,
+            clear_on_cursor_move = true
+        },
+
+        highlight_current_scope = { enable =  false},
+
+    },
+
+    textobjects = {
+
+        -- swap
     }
 }
 

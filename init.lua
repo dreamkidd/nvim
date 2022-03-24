@@ -1,22 +1,27 @@
-require("basic")
+if (vim.g.vscode) then
+    require('plugin.packer_compiled')
 
-require("keybindings")
+else
+    require("basic")
 
-require("plugins")
+    require("keybindings")
 
-require("colorscheme")
+    require("plugins")
 
-require("plugin-config.nvim-tree")
-require("plugin-config.bufferline")
-require("plugin-config.lualine")
-require("plugin-config.nvim-treesitter")
-require("plugin-config.hop")
-require("plugin-config.telescope")
-require("plugin-config.whichkey")
-require("plugin-config.comment")
-require("plugin-config.autopairs")
-require("plugin-config.cmp")
-require("plugin-config.indent-blankline")
-require("plugin-config.colorizer")
+    require("colorscheme")
 
-require("lsp.init")
+    require("plugin-config.nvim-tree")
+    require("plugin-config.bufferline")
+    require("plugin-config.lualine")
+    require("plugin-config.nvim-treesitter")
+    require("plugin-config.hop")
+    require("plugin-config.telescope")
+    require("plugin-config.whichkey")
+    require("plugin-config.comment")
+    require("plugin-config.autopairs")
+    require("plugin-config.cmp")
+    require("plugin-config.indent-blankline")
+    require("plugin-config.colorizer")
+
+    require("lsp.init")
+end

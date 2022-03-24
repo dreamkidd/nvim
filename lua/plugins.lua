@@ -1,7 +1,7 @@
 local fn = vim.fn
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 
 local packer = require("packer")
@@ -18,9 +18,16 @@ packer.startup({
         use ({'akinsho/bufferline.nvim' , requires = 'kyazdani42/nvum-web-devicons','moll/vim-bbye'})
         use { 'nvim-lualine/lualine.nvim'}
         use { 'nvim-telescope/telescope.nvim', requires = { "nvim-lua/plenary.nvim" } }
+
+        -- treesitter plugin
         use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+        use {'nvim-treesitter/nvim-treesitter-textobjects'}
+        use {'nvim-treesitter/nvim-treesitter-refactor'}
         -- Git plugin
         use 'lewis6991/gitsigns.nvim'
+
+
+        use('ahmedkhalf/project.nvim')
 
         -- Hop which like easymotion
         use {
@@ -67,17 +74,12 @@ packer.startup({
     },
 })
 
-
-
-
--- 自动更新
 pcall(
     vim.cmd,
     [[
-augroup packer_user_config
-autocmd!
-autocmd BufWritePost plugins.lua source <afile> | PackerSync
-augroup end
-]]
+    augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+    augroup end
+    ]]
 )
-
