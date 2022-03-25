@@ -7,6 +7,7 @@ end
 bufferline.setup({
 
     options = {
+        numbers = "ordinal",
         -- 关闭 Tab 的命令，这里使用 moll/vim-bbye 的 :Bdelete 命令
         close_command = "Bdelete! %d",
         right_mouse_command = "Bdelete! %d",

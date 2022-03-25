@@ -3,11 +3,11 @@ if (vim.g.vscode) then
 
 else
     require("basic")
-
     require("keybindings")
 
     require("plugins")
 
+    -- require('plugin-config.catppuccin')
     require("colorscheme")
 
     require("plugin-config.nvim-tree")

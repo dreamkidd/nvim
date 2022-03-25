@@ -9,6 +9,14 @@ packer.startup({
     function(use)
         use 'wbthomason/packer.nvim'
         use 'EdenEast/nightfox.nvim'
+
+        use ({
+            'catppuccin/nvim',
+            as = 'catppuccin',
+            -- config = function()
+            --     require('plugin-config.catppuccin')
+            -- end
+        })
         use 'shaunsingh/nord.nvim'
 
         use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
