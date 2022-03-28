@@ -22,6 +22,8 @@ else
     require("plugin-config.cmp")
     require("plugin-config.indent-blankline")
     require("plugin-config.colorizer")
+    require('plugin-config.surround')
+    require('plugin-config.project')
 
     require("lsp.init")
 end

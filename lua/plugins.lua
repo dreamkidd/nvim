@@ -13,10 +13,10 @@ packer.startup({
         use ({
             'catppuccin/nvim',
             as = 'catppuccin',
-            -- config = function()
-            --     require('plugin-config.catppuccin')
-            -- end
         })
+
+        use 'ur4ltz/surround.nvim'
+
         use 'shaunsingh/nord.nvim'
 
         use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
