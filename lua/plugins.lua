@@ -55,7 +55,7 @@ packer.startup({
         use 'williamboman/nvim-lsp-installer' -- lsp-installer
         use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
         use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-
+        use "tami5/lspsaga.nvim"
 
         -- cmp plugins
         use "hrsh7th/nvim-cmp" -- The completion plugin
