@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/Users/zhangyang/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
     url = "https://github.com/glepnir/dashboard-nvim"
   },
+  ["fidget.nvim"] = {
+    loaded = true,
+    path = "/Users/zhangyang/.local/share/nvim/site/pack/packer/start/fidget.nvim",
+    url = "https://github.com/j-hui/fidget.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/zhangyang/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -153,6 +158,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/zhangyang/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  neoformat = {
+    loaded = true,
+    path = "/Users/zhangyang/.local/share/nvim/site/pack/packer/start/neoformat",
+    url = "https://github.com/sbdchd/neoformat"
   },
   ["nightfox.nvim"] = {
     loaded = true,
@@ -219,6 +229,11 @@ _G.packer_plugins = {
     path = "/Users/zhangyang/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
   },
+  ["nvim-ts-rainbow"] = {
+    loaded = true,
+    path = "/Users/zhangyang/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
+    url = "https://github.com/p00f/nvim-ts-rainbow"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/zhangyang/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -249,10 +264,20 @@ _G.packer_plugins = {
     path = "/Users/zhangyang/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["todo-comments.nvim"] = {
+    loaded = true,
+    path = "/Users/zhangyang/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
+    url = "https://github.com/folke/todo-comments.nvim"
+  },
   ["vim-bbye"] = {
     loaded = true,
     path = "/Users/zhangyang/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
+  },
+  ["vim-multiple-cursors"] = {
+    loaded = true,
+    path = "/Users/zhangyang/.local/share/nvim/site/pack/packer/start/vim-multiple-cursors",
+    url = "https://github.com/terryma/vim-multiple-cursors"
   },
   ["vim-vsnip"] = {
     loaded = true,

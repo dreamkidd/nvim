@@ -31,6 +31,7 @@ packer.startup({
         use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
         use {'nvim-treesitter/nvim-treesitter-textobjects'}
         use {'nvim-treesitter/nvim-treesitter-refactor'}
+        use {'p00f/nvim-ts-rainbow'}
         -- Git plugin
         use 'lewis6991/gitsigns.nvim'
 
@@ -43,19 +44,26 @@ packer.startup({
             branch = 'v1'
         }
 
+        -- multiple-cursors
+        use 'terryma/vim-multiple-cursors'
         use 'glepnir/dashboard-nvim'
 
         use 'folke/which-key.nvim'
-
+        -- TODO comments
+        use 'folke/todo-comments.nvim'
         -- indent-blankline
-        use "lukas-reineke/indent-blankline.nvim"
+        use 'lukas-reineke/indent-blankline.nvim'
+
+        -- formatter plugin
+        use 'sbdchd/neoformat'
 
         -- LSP
         use 'neovim/nvim-lspconfig' -- enable LSP
         use 'williamboman/nvim-lsp-installer' -- lsp-installer
-        use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
-        use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-        use "tami5/lspsaga.nvim"
+        use 'tamago324/nlsp-settings.nvim' -- language server settings defined in json for
+        use 'jose-elias-alvarez/null-ls.nvim' -- for formatters and linters
+        use 'tami5/lspsaga.nvim'
+        use 'j-hui/fidget.nvim'
 
         -- cmp plugins
         use "hrsh7th/nvim-cmp" -- The completion plugin
