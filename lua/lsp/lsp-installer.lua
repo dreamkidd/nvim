@@ -18,6 +18,7 @@ lsp_installer.settings({
 
 local servers = {
     sumneko_lua = require("lsp.config.sumneko_lua"), -- lua/lsp/config/lua.lua
+    pyright = require('lsp.config.pyright'),
     -- rust_analyzer = require("lsp.lang.rust"),
     -- jsonls = require("lsp.lang.json"),
     -- tsserver = require("lsp.config.ts"),
