@@ -1,28 +1,30 @@
-local status , lsp_installer = pcall(require,"nvim-lsp-installer")
+local status, lsp_installer = pcall(require, "nvim-lsp-installer")
 if not status then
     vim.notify("nvim lsp installer not found")
     return
 end
 
-lsp_installer.settings({
-    ui = {
-        icons = {
-            server_installed = "◍",
-            -- The list icon to use for servers that are pending installation.
-            server_pending = "◍",
-            -- The list icon to use for servers that are not installed.
-            server_uninstalled = "◍",
+lsp_installer.settings(
+    {
+        ui = {
+            icons = {
+                server_installed = "◍",
+                -- The list icon to use for servers that are pending installation.
+                server_pending = "◍",
+                -- The list icon to use for servers that are not installed.
+                server_uninstalled = "◍"
+            }
         }
     }
-})
+)
 
 local servers = {
     sumneko_lua = require("lsp.config.sumneko_lua"), -- lua/lsp/config/lua.lua
-    pyright = require('lsp.config.pyright'),
+    pyright = require("lsp.config.pyright"),
     -- rust_analyzer = require("lsp.lang.rust"),
     -- jsonls = require("lsp.lang.json"),
-    -- tsserver = require("lsp.config.ts"),
-    -- remark_ls = require("lsp.lang.markdown"),
+    tsserver = require("lsp.config.ts"),
+    -- remark_ls = require("lsp.lang.markdown")
     -- html = {},
 }
 
@@ -59,14 +61,16 @@ end
 --     server:setup(opts)
 -- end)
 
-lsp_installer.on_server_ready(function(server)
-    local config = servers[server.name]
-    if config == nil then
-        return
+lsp_installer.on_server_ready(
+    function(server)
+        local config = servers[server.name]
+        if config == nil then
+            return
+        end
+        if config.on_setup then
+            config.on_setup(server)
+        else
+            server:setup({})
+        end
     end
-    if config.on_setup then
-        config.on_setup(server)
-    else
-        server:setup({})
-    end
-end)
+)

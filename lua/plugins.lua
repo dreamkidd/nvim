@@ -65,6 +65,7 @@ packer.startup({
         use 'tami5/lspsaga.nvim'
         use 'j-hui/fidget.nvim'
 
+        use 'jose-elias-alvarez/nvim-lsp-ts-utils'
         -- cmp plugins
         use "hrsh7th/nvim-cmp" -- The completion plugin
         use "hrsh7th/cmp-buffer" -- buffer completions
