@@ -81,6 +81,9 @@ packer.startup({
 
         use 'norcalli/nvim-colorizer.lua' -- colorizer
 
+        use 'kdheepak/lazygit.nvim' -- lazygit
+
+        use 'github/copilot.vim' --copilot
     end,
     config = {
         display = {

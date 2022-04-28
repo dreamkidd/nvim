@@ -60,7 +60,7 @@ local opts = {
         -- required to fix code action ranges and filter diagnostics
         ts_utils.setup_client(client)
         -- no default maps, so you may want to define some here
-        keybindings.mapTsLSP(buf_set_keymap)
+        -- keybindings.mapTsLSP(buf_set_keymap)
     end
 }
 

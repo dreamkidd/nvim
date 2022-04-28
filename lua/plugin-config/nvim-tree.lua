@@ -9,7 +9,7 @@ local list_keys = require('keybindings').nvimTreeList
 
 nvim_tree.setup({
 
-    auto_close = true,
+    auto_close = false,
 
     git = {
         enable = false,
@@ -22,10 +22,10 @@ nvim_tree.setup({
         update_cwd = true,
     },
 
-    filters = {
-        dotfiles = true,
-        custom = { "node_modules" },
-    },
+    -- filters = {
+    --     dotfiles = false,
+    --     custom = { "node_modules" },
+    -- },
     view = {
 
         width = 30,

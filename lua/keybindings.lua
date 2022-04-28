@@ -76,6 +76,9 @@ map("n", "<s-Tab>", "<cmd> BufferLineCyclePrev<CR>", opt)
 map("n", "<leader>ft", "<cmd>TodoTelescope theme=dropdown<CR>", opt)
 
 map("n", "<leader>=", "<cmd>Neoformat<CR>", opt)
+
+map('n',"<leader>gg" , "<cmd> :LazyGit<CR>",opt)
+
 -- 插件快捷键
 local pluginKeys = {}
 
