@@ -1,13 +1,13 @@
-local status, lspsaga = pcall(require,'lspsaga')
+local status, lspsaga = pcall(require, "lspsaga")
 
 if not status then
     vim.notify("Not found lspsaga")
     return
 end
 
-lspsaga.setup({
-
-        -- 提示边框样式：round、single、double
+lspsaga.setup(
+    {
+ -- 提示边框样式：round、single、double
         border_style = "round",
         error_sign = " ",
         warn_sign = " ",
@@ -33,4 +33,5 @@ lspsaga.setup({
             quit = "<Esc>",
             exec = "<CR>"
         }
-})
+    }
+)

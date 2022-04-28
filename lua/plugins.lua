@@ -55,7 +55,7 @@ packer.startup({
         use 'lukas-reineke/indent-blankline.nvim'
 
         -- formatter plugin
-        use 'sbdchd/neoformat'
+        -- use 'sbdchd/neoformat'
 
         -- LSP
         use 'neovim/nvim-lspconfig' -- enable LSP

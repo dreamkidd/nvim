@@ -21,9 +21,10 @@ lsp_installer.settings(
 local servers = {
     sumneko_lua = require("lsp.config.sumneko_lua"), -- lua/lsp/config/lua.lua
     pyright = require("lsp.config.pyright"),
+    null_ls = require("lsp.config.null-ls"),
     -- rust_analyzer = require("lsp.lang.rust"),
     -- jsonls = require("lsp.lang.json"),
-    tsserver = require("lsp.config.ts"),
+    tsserver = require("lsp.config.ts")
     -- remark_ls = require("lsp.lang.markdown")
     -- html = {},
 }

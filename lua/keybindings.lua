@@ -75,9 +75,10 @@ map("n", "<s-Tab>", "<cmd> BufferLineCyclePrev<CR>", opt)
 -- 查找 TODO 标签
 map("n", "<leader>ft", "<cmd>TodoTelescope theme=dropdown<CR>", opt)
 
-map("n", "<leader>=", "<cmd>Neoformat<CR>", opt)
+-- map("n", "<leader>=", "<cmd>Neoformat<CR>", opt)
+map("n", "<leader>=", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
 
-map('n',"<leader>gg" , "<cmd> :LazyGit<CR>",opt)
+map("n", "<leader>gg", "<cmd> :LazyGit<CR>", opt)
 
 -- 插件快捷键
 local pluginKeys = {}

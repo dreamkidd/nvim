@@ -17,9 +17,9 @@ bufferline.setup(
             offsets = {
                 {
                     filetype = "NvimTree",
-                    text = "File Explorer",
+                    text = " File Explorer",
                     highlight = "Directory",
-                    text_align = "left"
+                    text_align = "center"
                 }
             },
             diagnostics = "nvim_lsp",
