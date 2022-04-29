@@ -1,42 +1,42 @@
 local status, lsp_installer = pcall(require, "nvim-lsp-installer")
 if not status then
-    vim.notify("nvim lsp installer not found")
-    return
+	vim.notify("nvim lsp installer not found")
+	return
 end
 
-lsp_installer.settings(
-    {
-        ui = {
-            icons = {
-                server_installed = "◍",
-                -- The list icon to use for servers that are pending installation.
-                server_pending = "◍",
-                -- The list icon to use for servers that are not installed.
-                server_uninstalled = "◍"
-            }
-        }
-    }
-)
+lsp_installer.settings({
+	ui = {
+		icons = {
+			server_installed = "◍",
+			-- The list icon to use for servers that are pending installation.
+			server_pending = "◍",
+			-- The list icon to use for servers that are not installed.
+			server_uninstalled = "◍",
+		},
+	},
+})
 
 local servers = {
-    sumneko_lua = require("lsp.config.sumneko_lua"), -- lua/lsp/config/lua.lua
-    pyright = require("lsp.config.pyright"),
-    null_ls = require("lsp.config.null-ls"),
-    -- rust_analyzer = require("lsp.lang.rust"),
-    -- jsonls = require("lsp.lang.json"),
-    tsserver = require("lsp.config.ts")
-    -- remark_ls = require("lsp.lang.markdown")
-    -- html = {},
+	sumneko_lua = require("lsp.config.sumneko_lua"), -- lua/lsp/config/lua.lua
+	pyright = require("lsp.config.pyright"),
+	null_ls = require("lsp.config.null-ls"),
+	-- rust_analyzer = require("lsp.lang.rust"),
+	-- jsonls = require("lsp.lang.json"),
+	tsserver = require("lsp.config.ts"),
+	-- remark_ls = require("lsp.lang.markdown")
+	-- html = {},
+	-- rust
+	rust_analyzer = require("lsp.config.rust"),
 }
 
 for name, _ in pairs(servers) do
-    local server_is_found, server = lsp_installer.get_server(name)
-    if server_is_found then
-        if not server:is_installed() then
-            print("Installing " .. name)
-            server:install()
-        end
-    end
+	local server_is_found, server = lsp_installer.get_server(name)
+	if server_is_found then
+		if not server:is_installed() then
+			print("Installing " .. name)
+			server:install()
+		end
+	end
 end
 
 -- Register a handler that will be called for all installed servers.
@@ -62,16 +62,14 @@ end
 --     server:setup(opts)
 -- end)
 
-lsp_installer.on_server_ready(
-    function(server)
-        local config = servers[server.name]
-        if config == nil then
-            return
-        end
-        if config.on_setup then
-            config.on_setup(server)
-        else
-            server:setup({})
-        end
-    end
-)
+lsp_installer.on_server_ready(function(server)
+	local config = servers[server.name]
+	if config == nil then
+		return
+	end
+	if config.on_setup then
+		config.on_setup(server)
+	else
+		server:setup({})
+	end
+end)

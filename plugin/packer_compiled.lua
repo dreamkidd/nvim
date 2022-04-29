@@ -169,11 +169,6 @@ _G.packer_plugins = {
     path = "/Users/zhangyang/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
-  neoformat = {
-    loaded = true,
-    path = "/Users/zhangyang/.local/share/nvim/site/pack/packer/start/neoformat",
-    url = "https://github.com/sbdchd/neoformat"
-  },
   ["nightfox.nvim"] = {
     loaded = true,
     path = "/Users/zhangyang/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
@@ -268,6 +263,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/zhangyang/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
+  },
+  ["rust-tools.nvim"] = {
+    loaded = true,
+    path = "/Users/zhangyang/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
+    url = "https://github.com/simrat39/rust-tools.nvim"
   },
   ["surround.nvim"] = {
     loaded = true,
